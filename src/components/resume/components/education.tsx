@@ -6,22 +6,23 @@ const Education: React.FC = () => {
       <h2>Education</h2>
       <ul>
         <li>
-          <strong>University of Idaho (UI)</strong> - B.S. Mechanical Engineering Degree
+          <strong>B.S. Mechanical Engineering </strong>
           <br />
-          <em>August 2021 -- May 2023</em>
+          University of Idaho (UI), Moscow ID
           <br />
-          Moscow, ID
+          <em>August 2021 - May 2023</em>, Institutional GPA: 3.5
           <br />
-          Institutional GPA: 3.3
+          American Society of Mechanical Engineers
         </li>
+        <br />
         <li>
-          <strong>Knox College (KC)</strong> - B.S. Computer Science Degree
+          <strong>B.S. Computer Science</strong>
           <br />
-          <em>August 2018 -- June 2021</em>
+          Knox College (KC), Galesburg IL
           <br />
-          Galesburg, IL
+          <em>August 2018 - June 2021</em>, Institutional GPA: 3.1
           <br />
-          Institutional GPA: 3.0, NCAA DIII College Basketball Athlete
+          NCAA Division III Basketball Athlete
         </li>
       </ul>
     </section>
