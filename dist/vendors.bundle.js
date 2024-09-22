@@ -7,7 +7,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunknickolas_whitman_portfolio"] = self["webpackChunknickolas_whitman_portfolio"] || []).push([["vendors-node_modules_react-dom_index_js"],{
+(self["webpackChunknickolas_whitman_portfolio"] = self["webpackChunknickolas_whitman_portfolio"] || []).push([["vendors"],{
 
 /***/ "./node_modules/react-dom/cjs/react-dom.development.js":
 /*!*************************************************************!*\
