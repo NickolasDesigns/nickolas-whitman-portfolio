@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Website dedicated to serve Nickolas Whitman's Resume and Projects.",
   "main": "src/index.tsx",
+  "type": "module",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack"
@@ -13,7 +14,8 @@
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "web-vitals": "^4.2.3"
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.6.0",

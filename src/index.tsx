@@ -1,11 +1,12 @@
-import React, { Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Resume from "./components/resume/index";
 
-const Resume = lazy(() => import('./components/resume/index'));
-
-ReactDOM.render(
-  <Suspense fallback={<div>Loading...</div>}>
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+root.render(
+  <React.StrictMode>
     <Resume />
-  </Suspense>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
