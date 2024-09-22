@@ -1,0 +1,25 @@
+{
+  "name": "nickolas-whitman-portfolio",
+  "version": "1.0.0",
+  "description": "Website dedicated to serve Nickolas Whitman's Resume and Projects.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "author": "Nickolas Whitman",
+  "dependencies": {
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
