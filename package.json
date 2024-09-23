@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nickolasdesigns.github.io/nickolas-whitman-portfolio/",
-  "name": "nickolas-whitman-webapp",
+  "homepage": "https://NickolasDesigns.github.io/nickolas-whitman-portfolio",
+  "name": "nickolas-whitman-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
