@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Box, Tabs, Tab } from '@mui/material';
 import Resume from '../resume';
+import PongGame from '../Pong';
 
-export default function ScrollableTabsButtonForce() {
+export function AppBar() {
     const [value, setValue] = React.useState<number>(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -12,7 +13,7 @@ export default function ScrollableTabsButtonForce() {
 
     return (
         <Router>
-            <Box sx={{ maxWidth: '100%', bgcolor: 'background.paper' }}>
+            <Box sx={{ maxWidth: '100%', height: window.innerHeight, bgcolor: 'background.paper' }}>
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -20,6 +21,7 @@ export default function ScrollableTabsButtonForce() {
                     scrollButtons
                     allowScrollButtonsMobile
                     aria-label="scrollable force tabs example"
+                    style={{ height: '20px' }}
                 >
                     <Tab label="Resume" component={Link} to="/resume" />
                     <Tab label="Pong" component={Link} to="/pong" />
@@ -29,11 +31,9 @@ export default function ScrollableTabsButtonForce() {
                     <Route
                         path="/pong"
                         element={
-                            <iframe
-                                src={'../Pong/pong.html'}
-                                title="Pong Game"
-                                style={{ width: '100%', height: '100%', border: 'none' }}
-                            />
+                            <div style={{ height: '90%', width: '100%' }}>
+                                <PongGame />
+                            </div>
                         }
                     />
                 </Routes>
