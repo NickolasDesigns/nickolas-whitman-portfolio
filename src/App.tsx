@@ -11,7 +11,15 @@ function App(): ReactElement {
     return (
         <ThemeProvider theme={theme}>
             <Router basename={process.env.NODE_ENV === 'development' ? '/' : '/nickolas-whitman-portfolio'}>
-                <Box sx={{ maxWidth: '100%', height: window.innerHeight, bgcolor: 'background.paper' }}>
+                <Box
+                    sx={{
+                        width: '100%',
+                        maxWidth: '100%',
+                        height: window.innerHeight,
+                        maxHeight: window.innerHeight,
+                        bgcolor: 'background.paper',
+                    }}
+                >
                     <AppTabs />
                     <Routes>
                         <Route path="/" element={<Home />} errorElement={<NotFoundPage />} />
