@@ -4,6 +4,7 @@ import { Theme, useTheme, ThemeProvider, Box } from '@mui/material';
 import AppTabs from './Tabs';
 import Home from './views/Home';
 import Pong from './views/Pong';
+import NotFoundPage from './views/NotFoundPage';
 
 function App(): ReactElement {
     const theme: Theme = useTheme();
@@ -13,7 +14,7 @@ function App(): ReactElement {
                 <Box sx={{ maxWidth: '100%', height: window.innerHeight, bgcolor: 'background.paper' }}>
                     <AppTabs />
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Home />} errorElement={<NotFoundPage />} />
                         <Route
                             path="/pong"
                             element={
