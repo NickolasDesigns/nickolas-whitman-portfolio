@@ -89,7 +89,17 @@ const PongGame: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ position: 'absolute', overflowY: 'hidden', height: '70%', width: '100%', marginTop: '9%' }}>
+        <div
+            style={{
+                position: 'absolute',
+                overflowY: 'hidden',
+                height: '70%',
+                width: '100%',
+                marginTop: '9%',
+                marginRight: '0px',
+                left: '0px',
+            }}
+        >
             <canvas id="canvas" style={{ height: '100%' }}></canvas>
             <h1
                 id="player1Score"

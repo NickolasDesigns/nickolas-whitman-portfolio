@@ -17,8 +17,6 @@ function App(): ReactElement {
                     sx={{
                         width: '100%',
                         maxWidth: '100%',
-                        height: window.innerHeight,
-                        maxHeight: window.innerHeight,
                         bgcolor: 'background.paper',
                     }}
                 >
