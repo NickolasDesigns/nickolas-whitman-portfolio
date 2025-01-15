@@ -34,7 +34,7 @@ const PongGame: React.FC = () => {
             keyPressed[e.keyCode] = false;
         });
 
-        const ball = new Ball(vec2(200, 200), vec2(3, 3), 20, ctx);
+        const ball = new Ball(vec2(200, 200), vec2(5, 4), 20, ctx);
         const paddle1 = new Paddle(vec2(0, 50), vec2(5, 5), 20, 160, ctx, keyPressed);
         const paddle2 = new Paddle(vec2(canvas.width - 20, 30), vec2(2, 2), 20, 160, ctx, keyPressed);
 
@@ -89,7 +89,7 @@ const PongGame: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ height: '100%', width: '100%' }}>
+        <div style={{ position: 'absolute', overflowY: 'hidden', height: '70%', width: '100%', marginTop: '9%' }}>
             <canvas id="canvas" style={{ height: '100%' }}></canvas>
             <h1
                 id="player1Score"
