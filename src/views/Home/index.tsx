@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundVideo from '../../assets/CherryBlossomUnderNightSky2.mp4';
+import backgroundVideo from '../../assets/StarsBackground.mp4';
 
 const Home = () => {
     return (

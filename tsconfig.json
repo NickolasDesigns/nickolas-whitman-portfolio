@@ -1,8 +1,14 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
+        "target": "es5",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext",
+            "WebWorker"
+        ],
+        "allowJs": false,
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -11,12 +17,24 @@
         "noFallthroughCasesInSwitch": true,
         "module": "esnext",
         "moduleResolution": "node",
-        "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "noUnusedLocals": false,
+        "sourceMap": false,
+        "jsx": "react-jsx",
         "noImplicitAny": false,
-        "jsx": "react-jsx"
+        "allowUmdGlobalAccess": true,
+        "baseUrl": ".",
+        //"jsx": "react",
+        "types": [
+            "react",
+            "react-dom"
+        ]
     },
-    "include": ["src"]
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
 }

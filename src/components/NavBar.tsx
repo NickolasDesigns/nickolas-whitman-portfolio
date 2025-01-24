@@ -2,8 +2,11 @@ import React from 'react';
 import Logo from '../assets/logo.png';
 import AppTabs from '../Tabs';
 import { Typography } from '@mui/material';
+import { useAppSelector } from 'src/app/hooks';
 
 export const Navbar = () => {
+    const { tabName }= useAppSelector((state) => state.tabName)
+
     return (
         <div
             style={{
@@ -24,11 +27,17 @@ export const Navbar = () => {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'space-around',
-                        alignItems: 'center',
+                        alignItems: "center-top",
                     }}
                 >
-                    <img src={Logo} alt="" style={{ width: '7%', paddingRight: '20px', paddingLeft: '20px' }} />
-                    <div style={{ width: '90%' }}>
+                    <div style={{ width: '40%', paddingRight: '20px', paddingLeft: '20px', display: "flex", flexDirection: "row" }} >
+                        <img src={Logo} alt="" style={{ width: '20%'}} />
+                        <div style={{ display: "flex", flexDirection: "column", alignContent: "top", width: "80%", paddingLeft:"8px"}}>
+                            <Typography style={{ color: 'white', fontSize: '1.5rem' }}>Nickolas M. Whitman</Typography>
+                            <Typography style={{ color: 'white', fontSize: '1rem'}}>Automation Software Engineer</Typography>
+                        </div>
+                    </div>
+                    <div style={{ width: '60%', display: "flex", justifyContent: "left" }}>
                         <AppTabs />
                     </div>
                 </div>
