@@ -18,10 +18,12 @@ const AppTabs = () => {
     }
 
     return (
-        <Tabs value={value} onChange={handleChange} centered>
-            <Tab value="Home" label={buildLabelComponent('Home')} component={Link} to="/" style={{ marginRight: '20px' }} />
-            <Tab value="Pong" label={buildLabelComponent('Pong')} component={Link} to="/pong" style={{ marginRight: '20px' }} />
-        </Tabs>
+        <div style={{height: "100%"}}>
+            <Tabs value={value} onChange={handleChange} flex-container>
+                <Tab value="Home" label={buildLabelComponent('Home')} component={Link} to="/" style={{ marginRight: '20px' }} />
+                <Tab value="Pong" label={buildLabelComponent('Pong')} component={Link} to="/pong" style={{ marginRight: '20px' }} />
+            </Tabs>
+        </div>
     );
 };
 

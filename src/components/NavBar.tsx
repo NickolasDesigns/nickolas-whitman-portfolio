@@ -33,8 +33,8 @@ export const Navbar = () => {
                     <div style={{ width: '40%', paddingRight: '20px', paddingLeft: '20px', display: "flex", flexDirection: "row" }} >
                         <img src={Logo} alt="" style={{ width: '20%'}} />
                         <div style={{ display: "flex", flexDirection: "column", alignContent: "top", width: "80%", paddingLeft:"8px"}}>
-                            <Typography style={{ color: 'white', fontSize: '1.5rem' }}>Nickolas M. Whitman</Typography>
-                            <Typography style={{ color: 'white', fontSize: '1rem'}}>Automation Software Engineer</Typography>
+                            <Typography style={{ color: tabName === "Home" ? 'white' : "black", fontSize: '1.5rem' }}>Nickolas M. Whitman</Typography>
+                            <Typography style={{ color: tabName === "Home" ? 'white' : "black", fontSize: '1rem'}}>Automation Software Engineer</Typography>
                         </div>
                     </div>
                     <div style={{ width: '60%', display: "flex", justifyContent: "left" }}>
