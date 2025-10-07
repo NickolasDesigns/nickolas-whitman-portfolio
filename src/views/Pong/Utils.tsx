@@ -1,17 +1,18 @@
 import { Ball } from './Ball';
 import { Paddle } from './Paddle';
 
+// Utility function representing a 2D vector.
 export function vec2(x: number, y: number) {
     return { x, y };
 }
 
-export function ballCollisionWithEdges(ball: Ball, canvas) {
+export function ballCollisionWithEdges(ball: Ball, canvas: HTMLCanvasElement) {
     if (ball.pos.y + ball.radius >= canvas.height || ball.pos.y - ball.radius <= 0) {
         ball.velocity.y *= -1;
     }
 }
 
-export function paddleCollisionWithEdges(paddle: Paddle, canvas) {
+export function paddleCollisionWithEdges(paddle: Paddle, canvas: HTMLCanvasElement) {
     if (paddle.pos.y <= 0) {
         paddle.pos.y = 0;
     }
@@ -30,7 +31,7 @@ export function ballPaddleCollision(ball: Ball, paddle: Paddle) {
     }
 }
 
-export function player2AI(ball: Ball, paddle: Paddle, canvas) {
+export function player2AI(ball: Ball, paddle: Paddle, canvas: HTMLCanvasElement) {
     if (ball.velocity.x > 0) {
         if (ball.pos.y > paddle.pos.y) {
             paddle.pos.y += paddle.velocity.y;
@@ -50,7 +51,7 @@ export function player2AI(ball: Ball, paddle: Paddle, canvas) {
     }
 }
 
-export function respawnBall(ball: Ball, canvas) {
+export function respawnBall(ball: Ball, canvas: HTMLCanvasElement) {
     if (ball.velocity.x > 0) {
         ball.pos.x = canvas.width - 150;
         ball.pos.y = Math.random() * (canvas.height - 200) + 100;
@@ -65,7 +66,7 @@ export function respawnBall(ball: Ball, canvas) {
     ball.velocity.y *= -1;
 }
 
-export function increaseScore(ball: Ball, paddle1: Paddle, paddle2: Paddle, canvas) {
+export function increaseScore(ball: Ball, paddle1: Paddle, paddle2: Paddle, canvas: HTMLCanvasElement) {
     if (ball.pos.x <= -ball.radius) {
         paddle2.score += 1;
         const aiScoreElement = document.getElementById('AIScore');
@@ -84,7 +85,7 @@ export function increaseScore(ball: Ball, paddle1: Paddle, paddle2: Paddle, canv
     }
 }
 
-export function drawGameScene(ctx, canvas) {
+export function drawGameScene(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
     ctx.strokeStyle = '#ffff00';
     ctx.beginPath();
     ctx.lineWidth = 20;

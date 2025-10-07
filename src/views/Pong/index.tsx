@@ -15,7 +15,7 @@ const PongGame: React.FC = () => {
     const gameLoopRef = useRef<number | null>(null);
 
     useEffect(() => {
-        const uniqueId = Date.now().toString();
+        const uniqueId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
         localStorage.setItem('pongGameId', uniqueId);
 
         const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -34,9 +34,21 @@ const PongGame: React.FC = () => {
             keyPressed[e.keyCode] = false;
         });
 
-        const ball = new Ball(vec2(200, 200), vec2(5, 4), 20, ctx);
+        const ball = new Ball(vec2(200, 200), vec2(3, 2), 20, ctx);
         const paddle1 = new Paddle(vec2(0, 50), vec2(5, 5), 20, 160, ctx, keyPressed);
-        const paddle2 = new Paddle(vec2(canvas.width - 20, 30), vec2(2, 2), 20, 160, ctx, keyPressed);
+        const paddle2 = new Paddle(vec2(canvas.width - 20, 30), vec2(2, 1), 20, 160, ctx, keyPressed);
+
+        // Touch event handlers
+        const handleTouchMove = (e: TouchEvent) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const canvasRect = canvas.getBoundingClientRect();
+            const y = touch.clientY - canvasRect.top;
+            // Update paddle1 position
+            paddle1.pos.y = Math.max(0, Math.min(y - paddle1.height / 2, canvas.height - paddle1.height));
+        };
+
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
 
         function gameUpdate() {
             ball.update();
@@ -81,26 +93,37 @@ const PongGame: React.FC = () => {
             }
         });
 
+        // Cleanup on unmount
         return () => {
             if (gameLoopRef.current !== null) {
                 window.cancelAnimationFrame(gameLoopRef.current);
             }
+            canvas.removeEventListener('touchmove', handleTouchMove);
+            localStorage.removeItem('pongGameId');
+            const player1ScoreElem = document.getElementById('player1Score');
+            const aiScoreElem = document.getElementById('AIScore');
+            if (aiScoreElem) {
+                aiScoreElem.innerHTML = '0';
+            }
+            if (player1ScoreElem) {
+                player1ScoreElem.innerHTML = '0';
+            }
+            keyPressed.length = 0;
         };
     }, []);
 
     return (
         <div
             style={{
-                position: 'absolute',
-                overflowY: 'hidden',
-                height: '70%',
+                position: 'relative',
+                overflow: 'hidden',
+                // I need a ratio of width to height of 4:3
                 width: '100%',
-                marginTop: '9%',
-                marginRight: '0px',
-                left: '0px',
+                aspectRatio: '4 / 3',
+                maxWidth: '100vw',
             }}
         >
-            <canvas id="canvas" style={{ height: '100%' }}></canvas>
+            <canvas id="canvas" style={{ height: '100%' }}/>
             <h1
                 id="player1Score"
                 style={{
@@ -110,6 +133,7 @@ const PongGame: React.FC = () => {
                     color: '#fff',
                     fontFamily: 'sans-serif',
                     fontSize: '4rem',
+                    zIndex: 100,
                 }}
             >
                 0

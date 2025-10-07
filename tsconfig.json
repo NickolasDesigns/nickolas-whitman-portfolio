@@ -25,6 +25,7 @@
         "allowUmdGlobalAccess": true,
         "baseUrl": ".",
         //"jsx": "react",
+        "ignoreDeprecations": "6.0",
         "types": [
             "react",
             "react-dom"
