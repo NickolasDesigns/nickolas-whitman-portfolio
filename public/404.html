@@ -1,18 +1,8 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <script>
-            // If not already at the root, redirect to the correct base path
-            var pathname = window.location.pathname;
-            var repoName = '/nickolas-whitman-portfolio';
-            if (!pathname.startsWith(repoName)) {
-                window.location.replace(repoName + pathname + window.location.search + window.location.hash);
-            }
-        </script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-    </body>
-</html>
+<script>
+    // If not already at the root, redirect to the correct base path
+    var pathname = window.location.pathname;
+    var repoName = '/nickolas-whitman-portfolio';
+    if (!pathname.startsWith(repoName)) {
+        window.location.replace(repoName + pathname + window.location.search + window.location.hash);
+    }
+</script>
