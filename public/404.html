@@ -3,7 +3,7 @@
     var pathname = window.location.pathname;
     console.log("Current pathname:", pathname);
     var repoName = '/nickolas-whitman-portfolio';
-    if (!pathname.startsWith(repoName)) {
-        window.location.replace(repoName + pathname + window.location.search + window.location.hash);
+    if (!pathname.endsWith(repoName)) {
+        window.location.replace(repoName);
     }
 </script>
