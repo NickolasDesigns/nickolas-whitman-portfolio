@@ -1,6 +1,7 @@
 <script>
     // If not already at the root, redirect to the correct base path
     var pathname = window.location.pathname;
+    console.log("Current pathname:", pathname);
     var repoName = '/nickolas-whitman-portfolio';
     if (!pathname.startsWith(repoName)) {
         window.location.replace(repoName + pathname + window.location.search + window.location.hash);
